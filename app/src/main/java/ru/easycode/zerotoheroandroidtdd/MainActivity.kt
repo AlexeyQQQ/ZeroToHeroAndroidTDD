@@ -5,9 +5,11 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.contains
+import java.io.Serializable
 
 class MainActivity : AppCompatActivity() {
+
+    private var state: State = State.Initial
 
     private lateinit var titleTextView: TextView
     private lateinit var hideButton: Button
@@ -22,23 +24,39 @@ class MainActivity : AppCompatActivity() {
         rootLayout = findViewById(R.id.rootLayout)
 
         hideButton.setOnClickListener {
-            rootLayout.removeView(titleTextView)
+            state = State.Removed
+            state.apply(rootLayout, titleTextView)
         }
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        outState.putBoolean(KEY_TITLE, !rootLayout.contains(titleTextView))
+        outState.putSerializable(KEY_TITLE, state)
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
-        if (savedInstanceState.getBoolean(KEY_TITLE)) {
-            rootLayout.removeView(titleTextView)
-        }
+        state = savedInstanceState.getSerializable(KEY_TITLE) as State
+        state.apply(rootLayout, titleTextView)
     }
 
     companion object {
         private const val KEY_TITLE = "title_does_not_exist"
+    }
+}
+
+
+interface State : Serializable {
+
+    fun apply(linearLayout: LinearLayout, textView: TextView)
+
+    object Initial : State {
+        override fun apply(linearLayout: LinearLayout, textView: TextView) = Unit
+    }
+
+    object Removed : State {
+        override fun apply(linearLayout: LinearLayout, textView: TextView) {
+            linearLayout.removeView(textView)
+        }
     }
 }
