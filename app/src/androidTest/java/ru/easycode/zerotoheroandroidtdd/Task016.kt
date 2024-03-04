@@ -60,6 +60,7 @@ class Task016Test {
                 withParent(withId(R.id.rootLayout)),
                 isAssignableFrom(Button::class.java),
                 withId(R.id.actionButton),
+
                 withText("load")
             )
         ).perform(click())
