@@ -1,4 +1,4 @@
-package ru.easycode.zerotoheroandroidtdd
+package ru.easycode.zerotoheroandroidtdd.wrappers
 
 import androidx.annotation.MainThread
 import androidx.lifecycle.LifecycleOwner
