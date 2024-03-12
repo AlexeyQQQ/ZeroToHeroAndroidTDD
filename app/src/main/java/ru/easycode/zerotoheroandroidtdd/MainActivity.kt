@@ -54,6 +54,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object {
-        private const val FETCH_URL = "task/018-clouddatasource/app/sampleresponse.json"
+        private const val FETCH_URL = "https://raw.githubusercontent.com/JohnnySC/ZeroToHeroAndroidTDD/task/018-clouddatasource/app/sampleresponse.json"
     }
 }
