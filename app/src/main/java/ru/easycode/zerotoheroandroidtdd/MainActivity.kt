@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import ru.easycode.zerotoheroandroidtdd.databinding.ActivityMainBinding
+import ru.easycode.zerotoheroandroidtdd.databinding.ItemBinding
 
 class MainActivity : AppCompatActivity() {
 
@@ -39,11 +40,18 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+//    private fun addTextView(inputText: String) {
+//        val textView = TextView(this).apply {
+//            text = inputText
+//        }
+//        binding.contentLayout.addView(textView)
+//    }
+
     private fun addTextView(inputText: String) {
-        val textView = TextView(this).apply {
-            text = inputText
+        val itemBinding = ItemBinding.inflate(layoutInflater).apply {
+            titleTextView.text = inputText
         }
-        binding.contentLayout.addView(textView)
+        binding.contentLayout.addView(itemBinding.root)
     }
 
     companion object {
