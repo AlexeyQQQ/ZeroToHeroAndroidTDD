@@ -2,6 +2,8 @@ package ru.easycode.zerotoheroandroidtdd.main
 
 import androidx.lifecycle.LiveData
 import org.junit.Assert.assertEquals
+import ru.easycode.zerotoheroandroidtdd.navigation.Navigation
+import ru.easycode.zerotoheroandroidtdd.navigation.Screen
 
 interface FakeNavigation : Navigation.Mutable {
 
