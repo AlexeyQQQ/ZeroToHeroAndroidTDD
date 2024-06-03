@@ -9,6 +9,9 @@ import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+import ru.easycode.zerotoheroandroidtdd.room.Database
+import ru.easycode.zerotoheroandroidtdd.room.ItemCache
+import ru.easycode.zerotoheroandroidtdd.room.ItemsDao
 import java.io.IOException
 
 /**
@@ -17,16 +20,16 @@ import java.io.IOException
 @RunWith(AndroidJUnit4::class)
 class RoomTest {
 
-    private lateinit var db: ItemsDataBase
+    private lateinit var db: Database
     private lateinit var dao: ItemsDao
 
     @Before
     fun setUp() {
         val context: Context = ApplicationProvider.getApplicationContext()
-        db = Room.inMemoryDatabaseBuilder(context, ItemsDataBase::class.java)
+        db = Room.inMemoryDatabaseBuilder(context, Database::class.java)
             .allowMainThreadQueries()
             .build()
-        dao = db.itemsDao()
+        dao = db.dao()
     }
 
     @After

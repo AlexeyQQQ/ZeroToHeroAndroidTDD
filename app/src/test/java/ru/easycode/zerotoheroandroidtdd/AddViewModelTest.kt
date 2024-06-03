@@ -4,6 +4,8 @@ import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.Dispatchers
 import org.junit.Assert.assertEquals
 import org.junit.Test
+import ru.easycode.zerotoheroandroidtdd.di.ClearViewModel
+import ru.easycode.zerotoheroandroidtdd.wrappers.ListLiveDataWrapper
 
 class AddViewModelTest {
 

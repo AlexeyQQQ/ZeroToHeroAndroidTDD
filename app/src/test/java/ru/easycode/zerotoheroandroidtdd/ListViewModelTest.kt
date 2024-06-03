@@ -4,15 +4,17 @@ import androidx.lifecycle.LiveData
 import kotlinx.coroutines.Dispatchers
 import org.junit.Assert.assertEquals
 import org.junit.Test
+import ru.easycode.zerotoheroandroidtdd.wrappers.ListLiveDataWrapper
 
-class MainViewModelTest {
+class ListViewModelTest {
 
     @Test
     fun test() {
         val repository = FakeRepository.Base()
         val liveDataWrapper = FakeListLiveDataWrapper.Base()
-        val viewModel = MainViewModel(
-            repository = repository, liveDataWrapper = liveDataWrapper,
+        val viewModel = ListViewModel(
+            repository = repository,
+            liveDataWrapper = liveDataWrapper,
             dispatcher = Dispatchers.Unconfined,
             dispatcherMain = Dispatchers.Unconfined
         )
