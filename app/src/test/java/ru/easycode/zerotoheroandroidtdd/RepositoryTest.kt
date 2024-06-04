@@ -3,6 +3,11 @@ package ru.easycode.zerotoheroandroidtdd
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
+import ru.easycode.zerotoheroandroidtdd.repository.ItemUi
+import ru.easycode.zerotoheroandroidtdd.repository.Now
+import ru.easycode.zerotoheroandroidtdd.repository.Repository
+import ru.easycode.zerotoheroandroidtdd.room.ItemCache
+import ru.easycode.zerotoheroandroidtdd.room.ItemsDao
 
 class RepositoryTest {
 
@@ -26,8 +31,8 @@ class RepositoryTest {
             )
         )
 
-        val actual: List<Item> = repository.list()
-        val expected = listOf(Item(0, "first"), Item(1, "second"))
+        val actual: List<ItemUi> = repository.list()
+        val expected = listOf(ItemUi(0, "first"), ItemUi(1, "second"))
         assertEquals(expected, actual)
 
         repository.add(value = "third")
@@ -45,8 +50,8 @@ class RepositoryTest {
         repository.add(value = "first")
         dataSource.checkList(listOf(ItemCache(id = 7778L, text = "first")))
 
-        val actual: Item = repository.item(id = 7778L)
-        val expected = Item(id = 7778L, text = "first")
+        val actual: ItemUi = repository.item(id = 7778L)
+        val expected = ItemUi(id = 7778L, text = "first")
         assertEquals(expected, actual)
     }
 

@@ -2,6 +2,7 @@ package ru.easycode.zerotoheroandroidtdd
 
 import androidx.lifecycle.ViewModel
 import org.junit.Assert
+import ru.easycode.zerotoheroandroidtdd.di.ClearViewModel
 
 interface FakeClearViewModel : ClearViewModel {
 

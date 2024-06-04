@@ -11,6 +11,9 @@ import ru.easycode.zerotoheroandroidtdd.FakeListLiveDataWrapper.Companion.LIVE_D
 import ru.easycode.zerotoheroandroidtdd.FakeListLiveDataWrapper.Companion.LIVE_DATA_UPDATE
 import ru.easycode.zerotoheroandroidtdd.FakeRepositoryChange.Companion.REPOSITORY_DELETE
 import ru.easycode.zerotoheroandroidtdd.FakeRepositoryChange.Companion.REPOSITORY_UPDATE
+import ru.easycode.zerotoheroandroidtdd.details.DetailsViewModel
+import ru.easycode.zerotoheroandroidtdd.repository.ItemUi
+import ru.easycode.zerotoheroandroidtdd.repository.Repository
 
 class DetailsViewModelTest {
 
@@ -96,8 +99,8 @@ private interface FakeRepositoryChange : Repository.Change {
         private var actualId: Long = Long.MIN_VALUE
         private var updateText: String = ""
 
-        override fun item(id: Long): Item {
-            return Item(id, id.toString())
+        override fun item(id: Long): ItemUi {
+            return ItemUi(id, id.toString())
         }
 
         override fun checkDeleteCalled(id: Long) {

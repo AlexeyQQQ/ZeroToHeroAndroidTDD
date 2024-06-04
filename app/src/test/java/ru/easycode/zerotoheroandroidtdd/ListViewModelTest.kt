@@ -2,20 +2,24 @@ package ru.easycode.zerotoheroandroidtdd
 
 import kotlinx.coroutines.Dispatchers
 import org.junit.Test
+import ru.easycode.zerotoheroandroidtdd.list.ListViewModel
+import ru.easycode.zerotoheroandroidtdd.repository.ItemUi
+import ru.easycode.zerotoheroandroidtdd.repository.Repository
 
-class MainViewModelTest {
+class ListViewModelTest {
 
     @Test
     fun test() {
         val repository = FakeRepository.Base()
         val liveDataWrapper = FakeListLiveDataWrapper.Base()
-        val viewModel = MainViewModel(
-            repository = repository, liveDataWrapper = liveDataWrapper,
+        val viewModel = ListViewModel(
+            repository = repository,
+            liveDataWrapper = liveDataWrapper,
             dispatcher = Dispatchers.Unconfined,
             dispatcherMain = Dispatchers.Unconfined
         )
 
-        repository.expectList(listOf(Item(id = 0L, text = "1"), Item(id = 1L, text = "2")))
+        repository.expectList(listOf(ItemUi(id = 0L, text = "1"), ItemUi(id = 1L, text = "2")))
 
         viewModel.init()
 
@@ -30,17 +34,17 @@ class MainViewModelTest {
 
 private interface FakeRepository : Repository.Read {
 
-    fun expectList(list: List<Item>)
+    fun expectList(list: List<ItemUi>)
 
     class Base : FakeRepository {
 
-        private val list = mutableListOf<Item>()
+        private val list = mutableListOf<ItemUi>()
 
-        override fun expectList(list: List<Item>) {
+        override fun expectList(list: List<ItemUi>) {
             this.list.addAll(list)
         }
 
-        override fun list(): List<Item> {
+        override fun list(): List<ItemUi> {
             return list
         }
     }
