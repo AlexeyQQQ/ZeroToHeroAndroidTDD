@@ -1,9 +1,9 @@
 package ru.easycode.zerotoheroandroidtdd.folder.details
 
 import org.junit.Assert.assertEquals
+import ru.easycode.zerotoheroandroidtdd.FolderUi
 import ru.easycode.zerotoheroandroidtdd.core.Order
-import ru.easycode.zerotoheroandroidtdd.folder.core.FolderLiveDataWrapper
-import ru.easycode.zerotoheroandroidtdd.folder.list.FolderUi
+import ru.easycode.zerotoheroandroidtdd.wrappers.FolderLiveDataWrapper
 
 interface FakeFolderLiveDataWrapper : FolderLiveDataWrapper.Mutable {
 

@@ -3,10 +3,12 @@ package ru.easycode.zerotoheroandroidtdd.folder.core
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
 import org.junit.Test
-import ru.easycode.zerotoheroandroidtdd.core.FolderCache
-import ru.easycode.zerotoheroandroidtdd.core.FoldersDao
+import ru.easycode.zerotoheroandroidtdd.Folder
+import ru.easycode.zerotoheroandroidtdd.FoldersRepository
+import ru.easycode.zerotoheroandroidtdd.Now
 import ru.easycode.zerotoheroandroidtdd.note.core.FakeNotesDao
-import ru.easycode.zerotoheroandroidtdd.note.core.Now
+import ru.easycode.zerotoheroandroidtdd.room.FolderCache
+import ru.easycode.zerotoheroandroidtdd.room.FoldersDao
 
 class FoldersRepositoryTest {
 
