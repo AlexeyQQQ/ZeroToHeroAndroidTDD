@@ -1,8 +1,6 @@
-package ru.easycode.zerotoheroandroidtdd.di
+package ru.easycode.zerotoheroandroidtdd.core.di
 
 import androidx.lifecycle.ViewModel
-import ru.easycode.zerotoheroandroidtdd.FoldersRepository
-import ru.easycode.zerotoheroandroidtdd.NotesRepository
 import ru.easycode.zerotoheroandroidtdd.folders.create.CreateFolderViewModel
 import ru.easycode.zerotoheroandroidtdd.folders.details.FolderDetailsViewModel
 import ru.easycode.zerotoheroandroidtdd.folders.edit.EditFolderViewModel
@@ -10,7 +8,7 @@ import ru.easycode.zerotoheroandroidtdd.folders.list.FolderListViewModel
 import ru.easycode.zerotoheroandroidtdd.main.MainViewModel
 import ru.easycode.zerotoheroandroidtdd.note.create.CreateNoteViewModel
 import ru.easycode.zerotoheroandroidtdd.note.edit.EditNoteViewModel
-import ru.easycode.zerotoheroandroidtdd.wrappers.NoteLiveDataWrapper
+import ru.easycode.zerotoheroandroidtdd.core.wrappers.NoteLiveDataWrapper
 
 interface ViewModelFactory : ProvideViewModel, ClearViewModels
 

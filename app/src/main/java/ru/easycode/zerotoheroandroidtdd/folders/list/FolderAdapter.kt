@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import ru.easycode.zerotoheroandroidtdd.FolderUi
+import ru.easycode.zerotoheroandroidtdd.core.data.FolderUi
 import ru.easycode.zerotoheroandroidtdd.databinding.FolderItemBinding
 
 class FolderAdapter : RecyclerView.Adapter<ItemViewHolder>() {

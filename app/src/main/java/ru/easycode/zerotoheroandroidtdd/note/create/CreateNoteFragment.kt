@@ -4,9 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import ru.easycode.zerotoheroandroidtdd.databinding.FragmentCreateNoteBinding
-import ru.easycode.zerotoheroandroidtdd.di.ProvideViewModel
+import ru.easycode.zerotoheroandroidtdd.core.di.ProvideViewModel
 
 class CreateNoteFragment : Fragment() {
 
@@ -15,6 +16,13 @@ class CreateNoteFragment : Fragment() {
         get() = _binding ?: throw RuntimeException("FragmentCreateNoteBinding == null")
 
     private lateinit var viewModel: CreateNoteViewModel
+
+    private val onBackPressedCallback =
+        object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                viewModel.comeback()
+            }
+        }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,11 +46,14 @@ class CreateNoteFragment : Fragment() {
                 binding.createNoteEditText.text.toString()
             )
         }
+
+        requireActivity().onBackPressedDispatcher.addCallback(onBackPressedCallback)
     }
 
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+        onBackPressedCallback.remove()
     }
 
     companion object {

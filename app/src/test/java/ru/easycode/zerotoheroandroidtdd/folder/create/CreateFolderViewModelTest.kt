@@ -4,16 +4,16 @@ import kotlinx.coroutines.Dispatchers
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
-import ru.easycode.zerotoheroandroidtdd.FolderUi
+import ru.easycode.zerotoheroandroidtdd.core.data.FolderUi
 import ru.easycode.zerotoheroandroidtdd.core.FakeClear
 import ru.easycode.zerotoheroandroidtdd.core.FakeClear.Companion.CLEAR
 import ru.easycode.zerotoheroandroidtdd.core.FakeNavigation
 import ru.easycode.zerotoheroandroidtdd.core.FakeNavigation.Companion.NAVIGATE
 import ru.easycode.zerotoheroandroidtdd.core.Order
-import ru.easycode.zerotoheroandroidtdd.FoldersRepository
+import ru.easycode.zerotoheroandroidtdd.core.data.FoldersRepository
 import ru.easycode.zerotoheroandroidtdd.folders.create.CreateFolderViewModel
-import ru.easycode.zerotoheroandroidtdd.main.FoldersListScreen
-import ru.easycode.zerotoheroandroidtdd.wrappers.FolderListLiveDataWrapper
+import ru.easycode.zerotoheroandroidtdd.core.FoldersListScreen
+import ru.easycode.zerotoheroandroidtdd.core.wrappers.FolderListLiveDataWrapper
 
 class CreateFolderViewModelTest {
 

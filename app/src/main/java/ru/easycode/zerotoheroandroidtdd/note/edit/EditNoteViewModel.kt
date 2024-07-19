@@ -7,14 +7,13 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import ru.easycode.zerotoheroandroidtdd.NotesRepository
-import ru.easycode.zerotoheroandroidtdd.di.ClearViewModels
-import ru.easycode.zerotoheroandroidtdd.main.FolderDetailsScreen
-import ru.easycode.zerotoheroandroidtdd.main.Navigation
-import ru.easycode.zerotoheroandroidtdd.main.Screen
-import ru.easycode.zerotoheroandroidtdd.wrappers.FolderLiveDataWrapper
-import ru.easycode.zerotoheroandroidtdd.wrappers.NoteListLiveDataWrapper
-import ru.easycode.zerotoheroandroidtdd.wrappers.NoteLiveDataWrapper
+import ru.easycode.zerotoheroandroidtdd.core.data.NotesRepository
+import ru.easycode.zerotoheroandroidtdd.core.di.ClearViewModels
+import ru.easycode.zerotoheroandroidtdd.core.Navigation
+import ru.easycode.zerotoheroandroidtdd.core.Screen
+import ru.easycode.zerotoheroandroidtdd.core.wrappers.FolderLiveDataWrapper
+import ru.easycode.zerotoheroandroidtdd.core.wrappers.NoteListLiveDataWrapper
+import ru.easycode.zerotoheroandroidtdd.core.wrappers.NoteLiveDataWrapper
 
 class EditNoteViewModel(
     private val folderLiveDataWrapper: FolderLiveDataWrapper.Decrement,
@@ -63,6 +62,7 @@ class EditNoteViewModel(
     fun comeback() {
         clear.clear(EditNoteViewModel::class.java)
         navigation.update(Screen.PopBackStack)
+//        navigation.update(FolderDetailsScreen)
     }
 
     override fun onCleared() {

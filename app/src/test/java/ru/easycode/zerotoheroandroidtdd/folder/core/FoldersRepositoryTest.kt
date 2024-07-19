@@ -3,12 +3,12 @@ package ru.easycode.zerotoheroandroidtdd.folder.core
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
 import org.junit.Test
-import ru.easycode.zerotoheroandroidtdd.Folder
-import ru.easycode.zerotoheroandroidtdd.FoldersRepository
-import ru.easycode.zerotoheroandroidtdd.Now
+import ru.easycode.zerotoheroandroidtdd.core.data.Folder
+import ru.easycode.zerotoheroandroidtdd.core.data.FoldersRepository
+import ru.easycode.zerotoheroandroidtdd.core.data.Now
 import ru.easycode.zerotoheroandroidtdd.note.core.FakeNotesDao
-import ru.easycode.zerotoheroandroidtdd.room.FolderCache
-import ru.easycode.zerotoheroandroidtdd.room.FoldersDao
+import ru.easycode.zerotoheroandroidtdd.core.data.room.FolderCache
+import ru.easycode.zerotoheroandroidtdd.core.data.room.FoldersDao
 
 class FoldersRepositoryTest {
 
@@ -17,30 +17,31 @@ class FoldersRepositoryTest {
         val now = FakeNow.Base(7L)
         val foldersDao = FakeFoldersDao.Base()
         val notesDao = FakeNotesDao.Base()
+
         val repository = FoldersRepository.Base(
             now = now,
             foldersDao = foldersDao,
             notesDao = notesDao
         )
 
-        val firstFolderId = repository.createFolder(name = "first")
+        val firstFolderId = repository.createFolder(name = "first")     // todo create()
         assertEquals(7L, firstFolderId)
-        val secondFolderId = repository.createFolder(name = "second")
+        val secondFolderId = repository.createFolder(name = "second")   // todo create()
         assertEquals(8L, secondFolderId)
 
-        val foldersInitialActual: List<Folder> = repository.folders()
+        val foldersInitialActual: List<Folder> = repository.folders()           // todo folders()
         val foldersInitialExpected = listOf(
             Folder(id = 7L, title = "first", notesCount = 0),
             Folder(id = 8L, title = "second", notesCount = 0)
         )
         assertEquals(foldersInitialExpected, foldersInitialActual)
 
-        repository.delete(folderId = 7L)
+        repository.delete(folderId = 7L)                                        // todo delete()
         notesDao.checkDeleteCalledWith(folderId = 7L)
 
-        repository.rename(folderId = 8L, newName = "new name for second")
+        repository.rename(folderId = 8L, newName = "new name for second")       // todo rename()
 
-        val foldersFinalListActual: List<Folder> = repository.folders()
+        val foldersFinalListActual: List<Folder> = repository.folders()         // todo folders()
         val foldersFinalListExpected = listOf(
             Folder(id = 8L, title = "new name for second", notesCount = 0)
         )

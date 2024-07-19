@@ -10,11 +10,11 @@ import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
-import ru.easycode.zerotoheroandroidtdd.room.AppDataBase
-import ru.easycode.zerotoheroandroidtdd.room.FolderCache
-import ru.easycode.zerotoheroandroidtdd.room.FoldersDao
-import ru.easycode.zerotoheroandroidtdd.room.NoteCache
-import ru.easycode.zerotoheroandroidtdd.room.NotesDao
+import ru.easycode.zerotoheroandroidtdd.core.data.room.AppDataBase
+import ru.easycode.zerotoheroandroidtdd.core.data.room.FolderCache
+import ru.easycode.zerotoheroandroidtdd.core.data.room.FoldersDao
+import ru.easycode.zerotoheroandroidtdd.core.data.room.NoteCache
+import ru.easycode.zerotoheroandroidtdd.core.data.room.NotesDao
 import java.io.IOException
 
 @RunWith(AndroidJUnit4::class)

@@ -1,7 +1,7 @@
-package ru.easycode.zerotoheroandroidtdd
+package ru.easycode.zerotoheroandroidtdd.core.data
 
-import ru.easycode.zerotoheroandroidtdd.room.NoteCache
-import ru.easycode.zerotoheroandroidtdd.room.NotesDao
+import ru.easycode.zerotoheroandroidtdd.core.data.room.NoteCache
+import ru.easycode.zerotoheroandroidtdd.core.data.room.NotesDao
 
 interface NotesRepository {
 

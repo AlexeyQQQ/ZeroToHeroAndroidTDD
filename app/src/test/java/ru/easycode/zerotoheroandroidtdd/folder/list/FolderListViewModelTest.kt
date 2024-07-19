@@ -4,19 +4,19 @@ import kotlinx.coroutines.Dispatchers
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
-import ru.easycode.zerotoheroandroidtdd.Folder
-import ru.easycode.zerotoheroandroidtdd.FolderUi
+import ru.easycode.zerotoheroandroidtdd.core.data.Folder
+import ru.easycode.zerotoheroandroidtdd.core.data.FolderUi
 import ru.easycode.zerotoheroandroidtdd.core.FakeNavigation
 import ru.easycode.zerotoheroandroidtdd.core.FakeNavigation.Companion.NAVIGATE
 import ru.easycode.zerotoheroandroidtdd.core.Order
 import ru.easycode.zerotoheroandroidtdd.folder.list.FakeListLiveDataWrapper.Companion.UPDATE
 import ru.easycode.zerotoheroandroidtdd.folder.list.FakeRepository.Companion.FOLDERS
-import ru.easycode.zerotoheroandroidtdd.FoldersRepository
+import ru.easycode.zerotoheroandroidtdd.core.data.FoldersRepository
 import ru.easycode.zerotoheroandroidtdd.folders.list.FolderListViewModel
-import ru.easycode.zerotoheroandroidtdd.main.CreateFolderScreen
-import ru.easycode.zerotoheroandroidtdd.main.FolderDetailsScreen
-import ru.easycode.zerotoheroandroidtdd.wrappers.FolderListLiveDataWrapper
-import ru.easycode.zerotoheroandroidtdd.wrappers.FolderLiveDataWrapper
+import ru.easycode.zerotoheroandroidtdd.core.CreateFolderScreen
+import ru.easycode.zerotoheroandroidtdd.core.FolderDetailsScreen
+import ru.easycode.zerotoheroandroidtdd.core.wrappers.FolderListLiveDataWrapper
+import ru.easycode.zerotoheroandroidtdd.core.wrappers.FolderLiveDataWrapper
 
 class FolderListViewModelTest {
 

@@ -1,8 +1,8 @@
-package ru.easycode.zerotoheroandroidtdd.wrappers
+package ru.easycode.zerotoheroandroidtdd.core.wrappers
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import ru.easycode.zerotoheroandroidtdd.NoteUi
+import ru.easycode.zerotoheroandroidtdd.core.data.NoteUi
 
 class NoteListLiveDataWrapper {
 

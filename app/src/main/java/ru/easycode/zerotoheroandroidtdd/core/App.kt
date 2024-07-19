@@ -1,18 +1,16 @@
-package ru.easycode.zerotoheroandroidtdd
+package ru.easycode.zerotoheroandroidtdd.core
 
 import android.app.Application
 import androidx.lifecycle.ViewModel
-import ru.easycode.zerotoheroandroidtdd.di.ClearViewModels
-import ru.easycode.zerotoheroandroidtdd.di.Core
-import ru.easycode.zerotoheroandroidtdd.di.ProvideViewModel
-import ru.easycode.zerotoheroandroidtdd.di.ViewModelFactory
-import ru.easycode.zerotoheroandroidtdd.main.Navigation
+import ru.easycode.zerotoheroandroidtdd.core.di.ClearViewModels
+import ru.easycode.zerotoheroandroidtdd.core.di.Core
+import ru.easycode.zerotoheroandroidtdd.core.di.ProvideViewModel
+import ru.easycode.zerotoheroandroidtdd.core.di.ViewModelFactory
 
 class App : Application(), ProvideViewModel {
 
     private lateinit var factory: ViewModelFactory
     private lateinit var core: Core
-    val navigation = Navigation.Base()
 
     private val clear: ClearViewModels = object : ClearViewModels {
         override fun clear(vararg viewModelClasses: Class<out ViewModel>) {
@@ -22,7 +20,7 @@ class App : Application(), ProvideViewModel {
 
     override fun onCreate() {
         super.onCreate()
-        core = Core(this, navigation)
+        core = Core(this)
         factory = ProvideViewModel.Factory(ProvideViewModel.Base(clear, core))
     }
 

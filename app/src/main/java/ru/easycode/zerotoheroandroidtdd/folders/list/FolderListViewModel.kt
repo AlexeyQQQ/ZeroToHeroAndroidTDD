@@ -7,14 +7,13 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import ru.easycode.zerotoheroandroidtdd.FolderUi
-import ru.easycode.zerotoheroandroidtdd.FoldersRepository
-import ru.easycode.zerotoheroandroidtdd.main.CreateFolderScreen
-import ru.easycode.zerotoheroandroidtdd.main.FolderDetailsScreen
-import ru.easycode.zerotoheroandroidtdd.main.Navigation
-import ru.easycode.zerotoheroandroidtdd.main.Screen
-import ru.easycode.zerotoheroandroidtdd.wrappers.FolderListLiveDataWrapper
-import ru.easycode.zerotoheroandroidtdd.wrappers.FolderLiveDataWrapper
+import ru.easycode.zerotoheroandroidtdd.core.data.FolderUi
+import ru.easycode.zerotoheroandroidtdd.core.data.FoldersRepository
+import ru.easycode.zerotoheroandroidtdd.core.CreateFolderScreen
+import ru.easycode.zerotoheroandroidtdd.core.FolderDetailsScreen
+import ru.easycode.zerotoheroandroidtdd.core.Navigation
+import ru.easycode.zerotoheroandroidtdd.core.wrappers.FolderListLiveDataWrapper
+import ru.easycode.zerotoheroandroidtdd.core.wrappers.FolderLiveDataWrapper
 
 class FolderListViewModel(
     private val repository: FoldersRepository.ReadList,
@@ -46,7 +45,7 @@ class FolderListViewModel(
 
     fun folderDetails(folderUi: FolderUi) {
         folderLiveDataWrapper.update(folderUi)
-        navigation.update(FolderDetailsScreen as Screen.ReplaceAndAddToBackstack)
+        navigation.update(FolderDetailsScreen)
     }
 
     override fun onCleared() {

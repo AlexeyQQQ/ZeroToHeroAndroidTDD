@@ -7,17 +7,16 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import ru.easycode.zerotoheroandroidtdd.NoteUi
-import ru.easycode.zerotoheroandroidtdd.NotesRepository
-import ru.easycode.zerotoheroandroidtdd.di.ClearViewModels
-import ru.easycode.zerotoheroandroidtdd.main.CreateNoteScreen
-import ru.easycode.zerotoheroandroidtdd.main.EditFolderScreen
-import ru.easycode.zerotoheroandroidtdd.main.EditNoteScreen
-import ru.easycode.zerotoheroandroidtdd.main.FoldersListScreen
-import ru.easycode.zerotoheroandroidtdd.main.Navigation
-import ru.easycode.zerotoheroandroidtdd.main.Screen
-import ru.easycode.zerotoheroandroidtdd.wrappers.FolderLiveDataWrapper
-import ru.easycode.zerotoheroandroidtdd.wrappers.NoteListLiveDataWrapper
+import ru.easycode.zerotoheroandroidtdd.core.data.NoteUi
+import ru.easycode.zerotoheroandroidtdd.core.data.NotesRepository
+import ru.easycode.zerotoheroandroidtdd.core.di.ClearViewModels
+import ru.easycode.zerotoheroandroidtdd.core.CreateNoteScreen
+import ru.easycode.zerotoheroandroidtdd.core.EditFolderScreen
+import ru.easycode.zerotoheroandroidtdd.core.EditNoteScreen
+import ru.easycode.zerotoheroandroidtdd.core.Navigation
+import ru.easycode.zerotoheroandroidtdd.core.Screen
+import ru.easycode.zerotoheroandroidtdd.core.wrappers.FolderLiveDataWrapper
+import ru.easycode.zerotoheroandroidtdd.core.wrappers.NoteListLiveDataWrapper
 
 class FolderDetailsViewModel(
     private val noteListRepository: NotesRepository.ReadList,
@@ -64,6 +63,7 @@ class FolderDetailsViewModel(
     fun comeback() {
         clear.clear(FolderDetailsViewModel::class.java)
         navigation.update(Screen.PopBackStack)
+//        navigation.update(FoldersListScreen)
     }
 
     override fun onCleared() {

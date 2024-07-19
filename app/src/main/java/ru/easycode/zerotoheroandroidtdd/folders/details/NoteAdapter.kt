@@ -4,8 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import ru.easycode.zerotoheroandroidtdd.NoteUi
-import ru.easycode.zerotoheroandroidtdd.databinding.FolderItemBinding
+import ru.easycode.zerotoheroandroidtdd.core.data.NoteUi
 import ru.easycode.zerotoheroandroidtdd.databinding.NoteItemBinding
 
 class NoteAdapter : RecyclerView.Adapter<ItemViewHolder>() {

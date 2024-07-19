@@ -2,7 +2,7 @@ package ru.easycode.zerotoheroandroidtdd.core
 
 import androidx.lifecycle.ViewModel
 import org.junit.Test
-import ru.easycode.zerotoheroandroidtdd.di.ProvideViewModel
+import ru.easycode.zerotoheroandroidtdd.core.di.ProvideViewModel
 
 class ProvideViewModelTest {
 

@@ -7,13 +7,12 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import ru.easycode.zerotoheroandroidtdd.FolderUi
-import ru.easycode.zerotoheroandroidtdd.di.ClearViewModels
-import ru.easycode.zerotoheroandroidtdd.FoldersRepository
-import ru.easycode.zerotoheroandroidtdd.main.FoldersListScreen
-import ru.easycode.zerotoheroandroidtdd.main.Navigation
-import ru.easycode.zerotoheroandroidtdd.main.Screen
-import ru.easycode.zerotoheroandroidtdd.wrappers.FolderListLiveDataWrapper
+import ru.easycode.zerotoheroandroidtdd.core.data.FolderUi
+import ru.easycode.zerotoheroandroidtdd.core.di.ClearViewModels
+import ru.easycode.zerotoheroandroidtdd.core.data.FoldersRepository
+import ru.easycode.zerotoheroandroidtdd.core.Navigation
+import ru.easycode.zerotoheroandroidtdd.core.Screen
+import ru.easycode.zerotoheroandroidtdd.core.wrappers.FolderListLiveDataWrapper
 
 class CreateFolderViewModel(
     private val repository: FoldersRepository.Create,
@@ -39,6 +38,7 @@ class CreateFolderViewModel(
     fun comeback() {
         clear.clear(CreateFolderViewModel::class.java)
         navigation.update(Screen.PopBackStack)
+//        navigation.update(FoldersListScreen)
     }
 
     override fun onCleared() {

@@ -4,21 +4,21 @@ import kotlinx.coroutines.Dispatchers
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
-import ru.easycode.zerotoheroandroidtdd.FolderUi
-import ru.easycode.zerotoheroandroidtdd.MyNote
-import ru.easycode.zerotoheroandroidtdd.NoteUi
+import ru.easycode.zerotoheroandroidtdd.core.data.FolderUi
+import ru.easycode.zerotoheroandroidtdd.core.data.MyNote
+import ru.easycode.zerotoheroandroidtdd.core.data.NoteUi
 import ru.easycode.zerotoheroandroidtdd.core.FakeClear
 import ru.easycode.zerotoheroandroidtdd.core.FakeClear.Companion.CLEAR
 import ru.easycode.zerotoheroandroidtdd.core.FakeNavigation
 import ru.easycode.zerotoheroandroidtdd.core.FakeNavigation.Companion.NAVIGATE
 import ru.easycode.zerotoheroandroidtdd.core.Order
 import ru.easycode.zerotoheroandroidtdd.folders.details.FolderDetailsViewModel
-import ru.easycode.zerotoheroandroidtdd.NotesRepository
-import ru.easycode.zerotoheroandroidtdd.main.CreateNoteScreen
-import ru.easycode.zerotoheroandroidtdd.main.EditFolderScreen
-import ru.easycode.zerotoheroandroidtdd.main.EditNoteScreen
-import ru.easycode.zerotoheroandroidtdd.main.FoldersListScreen
-import ru.easycode.zerotoheroandroidtdd.wrappers.NoteListLiveDataWrapper
+import ru.easycode.zerotoheroandroidtdd.core.data.NotesRepository
+import ru.easycode.zerotoheroandroidtdd.core.CreateNoteScreen
+import ru.easycode.zerotoheroandroidtdd.core.EditFolderScreen
+import ru.easycode.zerotoheroandroidtdd.core.EditNoteScreen
+import ru.easycode.zerotoheroandroidtdd.core.FoldersListScreen
+import ru.easycode.zerotoheroandroidtdd.core.wrappers.NoteListLiveDataWrapper
 
 class FolderDetailsViewModelTest {
 

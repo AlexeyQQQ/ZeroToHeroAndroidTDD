@@ -1,4 +1,4 @@
-package ru.easycode.zerotoheroandroidtdd.room
+package ru.easycode.zerotoheroandroidtdd.core.data.room
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

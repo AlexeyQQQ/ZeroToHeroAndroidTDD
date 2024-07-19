@@ -1,6 +1,7 @@
 package ru.easycode.zerotoheroandroidtdd.main
 
 import org.junit.Test
+import ru.easycode.zerotoheroandroidtdd.core.FoldersListScreen
 import ru.easycode.zerotoheroandroidtdd.core.FakeNavigation
 import ru.easycode.zerotoheroandroidtdd.core.Order
 

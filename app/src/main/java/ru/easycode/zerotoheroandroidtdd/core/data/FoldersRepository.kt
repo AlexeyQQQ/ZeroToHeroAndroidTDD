@@ -1,8 +1,8 @@
-package ru.easycode.zerotoheroandroidtdd
+package ru.easycode.zerotoheroandroidtdd.core.data
 
-import ru.easycode.zerotoheroandroidtdd.room.FolderCache
-import ru.easycode.zerotoheroandroidtdd.room.FoldersDao
-import ru.easycode.zerotoheroandroidtdd.room.NotesDao
+import ru.easycode.zerotoheroandroidtdd.core.data.room.FolderCache
+import ru.easycode.zerotoheroandroidtdd.core.data.room.FoldersDao
+import ru.easycode.zerotoheroandroidtdd.core.data.room.NotesDao
 
 interface FoldersRepository {
 

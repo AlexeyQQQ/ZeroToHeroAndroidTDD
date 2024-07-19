@@ -4,16 +4,16 @@ import kotlinx.coroutines.Dispatchers
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
-import ru.easycode.zerotoheroandroidtdd.NoteUi
+import ru.easycode.zerotoheroandroidtdd.core.data.NoteUi
 import ru.easycode.zerotoheroandroidtdd.core.FakeClear
 import ru.easycode.zerotoheroandroidtdd.core.FakeClear.Companion.CLEAR
 import ru.easycode.zerotoheroandroidtdd.core.FakeNavigation
 import ru.easycode.zerotoheroandroidtdd.core.FakeNavigation.Companion.NAVIGATE
 import ru.easycode.zerotoheroandroidtdd.core.Order
-import ru.easycode.zerotoheroandroidtdd.NotesRepository
-import ru.easycode.zerotoheroandroidtdd.main.FolderDetailsScreen
-import ru.easycode.zerotoheroandroidtdd.wrappers.FolderLiveDataWrapper
-import ru.easycode.zerotoheroandroidtdd.wrappers.NoteListLiveDataWrapper
+import ru.easycode.zerotoheroandroidtdd.core.data.NotesRepository
+import ru.easycode.zerotoheroandroidtdd.core.FolderDetailsScreen
+import ru.easycode.zerotoheroandroidtdd.core.wrappers.FolderLiveDataWrapper
+import ru.easycode.zerotoheroandroidtdd.core.wrappers.NoteListLiveDataWrapper
 
 class CreateNoteViewModelTest {
 
